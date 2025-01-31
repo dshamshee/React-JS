@@ -1,0 +1,10 @@
+config.getInitParameter() is used to access the value of initial parameters which are passed from servlet configuration file (web.XML) 
+
+To share common information with all the servlets inside web application, we can use servletContext and we can pass such values as <context-param> </context-param> tag 
+Ex: 
+
+getServeltConext() is used to craete object of servlet Context then you can access information from context 
+Ex: ServletContext context = getServeltConext();
+    String appName - context.getInitParameter("appName")
+
+getParameter() this method is used from web page which is sent by user 

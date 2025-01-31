@@ -5,9 +5,9 @@ export const NetflixSeries = () => {
 
 
   return (
-    <ul>
+    <ul className="grid grid-three--cols">
       {seriesData.map((element) => {
-       return <SeriesCard propElements={element} key={element.id} />
+       return <SeriesCard data={element} key={element.id} />
       })}
 
     </ul>
