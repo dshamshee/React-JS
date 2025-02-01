@@ -26,25 +26,32 @@ export const SeriesCard = (props) => {
     padding: 1.2rem 2.4rem;
     border: none;
     font-size: 1.6rem;
-    background-color: ${ (props) => props.rating >= 8.5 ? "#7dcea0" : "#f7dc6f"};
+    background-color: ${(props) => props.rating >= 8.5 ? "#7dcea0" : "#f7dc6f"};
     color: var(--btn-color);
     font-weight: bold;
     cursor: pointer;
   `;
-  
 
-  const ratingClass = rating >= 8.5 ? styles.super_hit: styles.average ;
+  const Rating = styled.h3`
+  font-size: 1.6rem;
+  color: #7dcea0;
+  text-transform: capitalize;
+  `
+
+
+  const ratingClass = rating >= 8.5 ? styles.super_hit : styles.average;
 
   return (
     <li className={styles.card}>
       <div className="image">
         <img className="img" src={img_url} alt="" width="30%" height="30%" />
       </div>
-      <div className={styles["card-content"]}>
+      {/* <div className={styles["card-content"]}> */}
+      <div className="flex flex-col gap-6 p-6">
         <h2>Name: {name}</h2>
-        <h3 style={{ fontSize: "1.8rem" }}>
-        Rating: <span className={ `${styles.rating} ${ratingClass}` }>{rating}</span>
-        </h3>
+        <Rating>
+          Rating: <span className={`${styles.rating} ${ratingClass}`}>{rating}</span>
+        </Rating>
         <p>Summary: {description}</p>
         <p>Genre: {genre}</p>
         <p>Cast: {cast}</p>
