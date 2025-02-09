@@ -6,7 +6,8 @@
 // import { EventHandling } from "./components/EventHandling";
 
 // import { EventProagation } from "./components/EventPropagation"
-import { DericedState } from "./components/DericedState"
+// import { DericedState } from "./components/DericedState"
+import { LiftingState } from "./components/LiftStateUp"
 // import { State } from "./components/hooks/State"
 
 export const App = () => {
@@ -21,7 +22,9 @@ export const App = () => {
       {/* <EventProagation /> */}
       {/* <State /> */}
       {/* <Sibling /> */}
-      <DericedState />
+      {/* <DericedState /> */}
+      <LiftingState />
+
     </>
   )
   
