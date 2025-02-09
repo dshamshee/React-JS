@@ -8,7 +8,8 @@
 // import { EventProagation } from "./components/EventPropagation"
 // import { DericedState } from "./components/DericedState"
 // import { LiftingState } from "./components/LiftStateUp"
-import {ToggleSwitch} from "./projects/ToggleSwitch/ToggleSwitch";
+// import {ToggleSwitch} from "./projects/ToggleSwitch/ToggleSwitch";
+import { Todo } from "./projects/Todo/Todo"
 // import { State } from "./components/hooks/State"
 
 export const App = () => {
@@ -17,7 +18,7 @@ export const App = () => {
   //     <h1 className="card-heading ">Lists of Best Netflix Series</h1>
   //   <NetflixSeries />
   // </section>
-    <section className="container">
+    <section>
       {/* <EventHandling/> */}
       {/* <EventProps /> */}
       {/* <EventProagation /> */}
@@ -25,7 +26,8 @@ export const App = () => {
       {/* <Sibling /> */}
       {/* <DericedState /> */}
       {/* <LiftingState /> */}
-      <ToggleSwitch />
+      {/* <ToggleSwitch /> */}
+      <Todo />
 
     </section>
   )
