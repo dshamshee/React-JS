@@ -9,7 +9,8 @@
 // import { DericedState } from "./components/DericedState"
 // import { LiftingState } from "./components/LiftStateUp"
 // import {ToggleSwitch} from "./projects/ToggleSwitch/ToggleSwitch";
-import { Todo } from "./projects/Todo/Todo"
+// import { Todo } from "./projects/Todo/Todo"
+import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
 
 export const App = () => {
@@ -27,7 +28,8 @@ export const App = () => {
       {/* <DericedState /> */}
       {/* <LiftingState /> */}
       {/* <ToggleSwitch /> */}
-      <Todo />
+      {/* <Todo /> */}
+      <Keys />
 
     </section>
   )

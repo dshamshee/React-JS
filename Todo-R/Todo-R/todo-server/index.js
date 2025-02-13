@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const todoRoutes = require('./routes/todoRoutes');
+const todoRoutes = require('./routes/todoRoutes'); // Importing the routes file
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/todoApp', {
   .catch(err => console.log(err));
 
 // Routes
-app.use('/api/todos', todoRoutes);
+app.use('/api/todos', todoRoutes); // Using the todoRoutes file for routes
 
 // Start the server
 app.listen(PORT, () => {
