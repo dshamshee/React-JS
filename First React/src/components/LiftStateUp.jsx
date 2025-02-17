@@ -11,6 +11,10 @@ export const LiftingState = ()=>{
 }
 
 
+
+
+
+
 const InputComponent = ({inputValue, setInputValue})=>{
     // const [inputValue, setInputValue] = useState("")  // child state variable 
     return(

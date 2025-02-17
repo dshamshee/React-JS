@@ -25,7 +25,8 @@ export const Keys = () => {
     }
 
     // setTasks can take either a new state value or a function. When it takes a function, React passes the current state (the previous state) as an argument to this function.
-    setTasks((prevTasks) => [ inputValue, ...prevTasks]);
+    // setTasks((prevTasks) => [ inputValue, ...prevTasks]); // Thois way is couses the problem 
+    setTasks((prevTasks) => [...prevTasks, inputValue]);
     setInputValue("");
   };
 //   console.log(task);

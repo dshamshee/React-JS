@@ -10,7 +10,9 @@
 // import { LiftingState } from "./components/LiftStateUp"
 // import {ToggleSwitch} from "./projects/ToggleSwitch/ToggleSwitch";
 // import { Todo } from "./projects/Todo/Todo"
-import {Keys} from './keys';
+import { Counter } from './components/hooks/useState';
+// import ShortCircuitExample from './components/SortCircuit';
+// import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
 
 export const App = () => {
@@ -19,7 +21,7 @@ export const App = () => {
   //     <h1 className="card-heading ">Lists of Best Netflix Series</h1>
   //   <NetflixSeries />
   // </section>
-    <section>
+    <>
       {/* <EventHandling/> */}
       {/* <EventProps /> */}
       {/* <EventProagation /> */}
@@ -29,9 +31,11 @@ export const App = () => {
       {/* <LiftingState /> */}
       {/* <ToggleSwitch /> */}
       {/* <Todo /> */}
-      <Keys />
+      {/* <Keys /> */}
+      {/* <ShortCircuitExample /> */}
+      <Counter />
 
-    </section>
+    </>
   )
   
   // return <Profile />
