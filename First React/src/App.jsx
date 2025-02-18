@@ -11,7 +11,8 @@
 // import {ToggleSwitch} from "./projects/ToggleSwitch/ToggleSwitch";
 // import { Todo } from "./projects/Todo/Todo"
 // import { CounterChallenge } from './components/hooks/useState/Challenge';
-import { RegistrationForm } from './components/hooks/useState/Registration';
+// import { RegistrationForm } from './components/hooks/useState/Registration';
+import { RegistrationFormReact } from './components/hooks/useState/RegistrationReact';
 // import { CounterChallenge } from './components/hooks/useState/Challenge';
 // import ShortCircuitExample from './components/SortCircuit';
 // import {Keys} from './keys';
@@ -37,7 +38,8 @@ export const App = () => {
       {/* <ShortCircuitExample /> */}
       {/* <Counter /> */}
       {/* <CounterChallenge /> */}
-      <RegistrationForm />
+      {/* <RegistrationForm /> */}
+      <RegistrationFormReact />
 
     </>
   )
