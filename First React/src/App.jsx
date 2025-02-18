@@ -10,7 +10,9 @@
 // import { LiftingState } from "./components/LiftStateUp"
 // import {ToggleSwitch} from "./projects/ToggleSwitch/ToggleSwitch";
 // import { Todo } from "./projects/Todo/Todo"
-import { Counter } from './components/hooks/useState';
+// import { CounterChallenge } from './components/hooks/useState/Challenge';
+import { RegistrationForm } from './components/hooks/useState/Registration';
+// import { CounterChallenge } from './components/hooks/useState/Challenge';
 // import ShortCircuitExample from './components/SortCircuit';
 // import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
@@ -33,7 +35,9 @@ export const App = () => {
       {/* <Todo /> */}
       {/* <Keys /> */}
       {/* <ShortCircuitExample /> */}
-      <Counter />
+      {/* <Counter /> */}
+      {/* <CounterChallenge /> */}
+      <RegistrationForm />
 
     </>
   )

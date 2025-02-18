@@ -1,8 +1,8 @@
 import { CardList } from "./CardList"
-import CardData from './CardData.json'
 import { CardForm } from "./CardForm"
 import { useState } from "react"
 import { setLocalStorageCards, getLocalStorageCards } from "./CardLocalStorage"
+
 
 
 export const Card = () => {
@@ -17,7 +17,7 @@ export const Card = () => {
 
         // setCards((prevCards)=> [...prevCards, {url, heading, description}]);
     }
-
+    
     const handleDeleteCard = (value) => {
         setCards(cards.filter((card) => card.heading !== value))
     }
