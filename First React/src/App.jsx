@@ -5,7 +5,8 @@
 // import "./components/Netflix.module.css";
 // import { EventHandling } from "./components/EventHandling";
 
-import { LoginForm } from "./components/hooks/useState/LoginForm"
+import { ContactForm } from "./components/hooks/useState/ContactForm"
+// import { LoginForm } from "./components/hooks/useState/LoginForm"
 
 // import { EventProagation } from "./components/EventPropagation"
 // import { DericedState } from "./components/DericedState"
@@ -42,7 +43,8 @@ export const App = () => {
       {/* <CounterChallenge /> */}
       {/* <RegistrationForm /> */}
       {/* <RegistrationFormReact /> */}
-      <LoginForm />
+      {/* <LoginForm /> */}
+      <ContactForm />
 
     </>
   )
