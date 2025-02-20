@@ -5,7 +5,11 @@
 // import "./components/Netflix.module.css";
 // import { EventHandling } from "./components/EventHandling";
 
-import { ContactForm } from "./components/hooks/useState/ContactForm"
+import { Challenge } from "./components/hooks/UseEffect/EffectChallenge"
+
+// import { ReactUseEffect } from "./components/hooks/UseEffect/Index"
+
+// import { ContactForm } from "./components/hooks/useState/ContactForm"
 // import { LoginForm } from "./components/hooks/useState/LoginForm"
 
 // import { EventProagation } from "./components/EventPropagation"
@@ -44,7 +48,9 @@ export const App = () => {
       {/* <RegistrationForm /> */}
       {/* <RegistrationFormReact /> */}
       {/* <LoginForm /> */}
-      <ContactForm />
+      {/* <ContactForm /> */}
+      {/* <ReactUseEffect /> */}
+      <Challenge />
 
     </>
   )
