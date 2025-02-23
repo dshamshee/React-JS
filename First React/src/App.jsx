@@ -5,7 +5,9 @@
 // import "./components/Netflix.module.css";
 // import { EventHandling } from "./components/EventHandling";
 
-import { Challenge } from "./components/hooks/UseEffect/EffectChallenge"
+import { CleanUp } from "./components/hooks/UseEffect/CleanUp"
+
+// import { Challenge } from "./components/hooks/UseEffect/EffectChallenge"
 
 // import { ReactUseEffect } from "./components/hooks/UseEffect/Index"
 
@@ -50,7 +52,8 @@ export const App = () => {
       {/* <LoginForm /> */}
       {/* <ContactForm /> */}
       {/* <ReactUseEffect /> */}
-      <Challenge />
+      {/* <Challenge /> */}
+      <CleanUp />
 
     </>
   )
