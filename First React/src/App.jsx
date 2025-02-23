@@ -5,7 +5,8 @@
 // import "./components/Netflix.module.css";
 // import { EventHandling } from "./components/EventHandling";
 
-import { CleanUp } from "./components/hooks/UseEffect/CleanUp"
+// import { CleanUp } from "./components/hooks/UseEffect/CleanUp"
+import { HowNotToFetchApi } from "./components/hooks/UseEffect/HowNotToFetchApi"
 
 // import { Challenge } from "./components/hooks/UseEffect/EffectChallenge"
 
@@ -53,7 +54,8 @@ export const App = () => {
       {/* <ContactForm /> */}
       {/* <ReactUseEffect /> */}
       {/* <Challenge /> */}
-      <CleanUp />
+      {/* <CleanUp /> */}
+      <HowNotToFetchApi />
 
     </>
   )
