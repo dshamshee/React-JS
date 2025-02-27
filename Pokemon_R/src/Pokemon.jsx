@@ -5,10 +5,11 @@ import { PokemonCards } from './PokemonCards';
 export const Pokemon = () => {
 
     const [pokemon, setPokemon] = useState([]);
-    const [loading, setLoading ] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [serach, setSearch] = useState("")
 
-    const API = "https://pokeapi.co/api/v2/pokemon?limit=24";
+    const API = "https://pokeapi.co/api/v2/pokemon?limit=124";
 
 
     const fetchPokemon = async () => {
@@ -26,27 +27,33 @@ export const Pokemon = () => {
             const detailedResponses = await Promise.all(detailedPokemonData);
             setPokemon(detailedResponses)
             setLoading(false);
-            
+
         } catch (error) {
             console.log(error)
             setLoading(false);
             setError(error);
         }
     }
-    
+
     useEffect(() => {
         fetchPokemon();
     }, [])
+    // console.log(pokemon)
 
-    if(loading){
+
+
+    // Search Functionality
+    const serachData = pokemon.filter((curPokemon) => curPokemon.name.toLowerCase().includes(serach.toLowerCase()))
+
+    if (loading) {
         return <div>Loading...</div>;
     }
-    
-    if(error){
+
+    if (error) {
         return <div>{error.message}</div>;
     }
-    
-   
+
+
     return (
         <>
             <section className='container'>
@@ -54,10 +61,15 @@ export const Pokemon = () => {
                     <h1>Lets Catch Pokemon</h1>
                 </header>
 
+                <div className="pokemon-search">
+                    <input type="text" placeholder='Search Pokemon' value={serach} onChange={(e) => setSearch(e.target.value)} />
+                </div>
+
                 <div>
                     <ul className="cards">
                         {
-                            pokemon.map((curPokemon)=>{
+                            // pokemon.map((curPokemon) => {
+                            serachData.map((curPokemon) => {
                                 return <PokemonCards key={curPokemon.id} pokemonData={curPokemon} />
                             })
                         }
