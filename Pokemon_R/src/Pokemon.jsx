@@ -75,9 +75,6 @@ export const Pokemon = () => {
                         }
                     </ul>
                 </div>
-
-
-
             </section>
         </>
     )
