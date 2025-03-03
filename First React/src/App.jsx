@@ -4,17 +4,13 @@
 // import "./components/Netflix.css";
 // import "./components/Netflix.module.css";
 // import { EventHandling } from "./components/EventHandling";
-
 // import { CleanUp } from "./components/hooks/UseEffect/CleanUp"
-import { HowNotToFetchApi } from "./components/hooks/UseEffect/HowNotToFetchApi"
-
+// import { HowNotToFetchApi } from "./components/hooks/UseEffect/HowNotToFetchApi"
+import { UseRef } from "./components/hooks/useRefs"
 // import { Challenge } from "./components/hooks/UseEffect/EffectChallenge"
-
 // import { ReactUseEffect } from "./components/hooks/UseEffect/Index"
-
 // import { ContactForm } from "./components/hooks/useState/ContactForm"
 // import { LoginForm } from "./components/hooks/useState/LoginForm"
-
 // import { EventProagation } from "./components/EventPropagation"
 // import { DericedState } from "./components/DericedState"
 // import { LiftingState } from "./components/LiftStateUp"
@@ -55,7 +51,8 @@ export const App = () => {
       {/* <ReactUseEffect /> */}
       {/* <Challenge /> */}
       {/* <CleanUp /> */}
-      <HowNotToFetchApi />
+      {/* <HowNotToFetchApi /> */}
+      <UseRef />
 
     </>
   )
