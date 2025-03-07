@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
-import './index.css'
 import { useState } from 'react';
+import axios from 'axios';
+import './index.css'
 import { PokemonCards } from './PokemonCards';
 export const Pokemon = () => {
 
@@ -9,18 +10,28 @@ export const Pokemon = () => {
     const [error, setError] = useState(null);
     const [serach, setSearch] = useState("")
 
-    const API = "https://pokeapi.co/api/v2/pokemon?limit=124";
+    const API = "https://pokeapi.co/api/v2/pokemon?limit=20";
 
 
     const fetchPokemon = async () => {
         try {
-            const res = await fetch(API);
-            const data = await res.json();
+            // const res = await fetch(API);
+            // const data = await res.json();
+            // console.log(data)
+            const res = await axios.get(API);
+            const data = res.data; // axios provides a data property
             // console.log(data)
 
             const detailedPokemonData = data.results.map(async (curPokemon) => {
-                const res = await fetch(curPokemon.url)
-                const data = await res.json()
+                // const res = await fetch(curPokemon.url)
+                // const data = await res.json()
+                // console.log(data);
+                // return data
+                
+
+                const res = await axios.get(curPokemon.url);
+                const data = res.data;
+                console.log(data)
                 return data;
             })
 
