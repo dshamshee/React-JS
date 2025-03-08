@@ -1,6 +1,9 @@
+import { Footer } from "./components/footer/Footer"
 import { Navbar } from "./components/navbar/navbar"
 import { About } from "./components/Sections/About"
+import { Contact } from "./components/Sections/Contact"
 import { Hero } from "./components/Sections/Hero"
+import { Projects } from "./components/Sections/Projects"
 import { Resume } from "./components/Sections/Resume"
 import { SkillCard } from "./components/Sections/SkillCard"
 
@@ -11,7 +14,6 @@ function App() {
       <div className="flex justify-center">
         <Navbar />
       </div>
-
       <div className="hero flex flex-col items-center">
         <Hero />
         <About />
@@ -23,6 +25,9 @@ function App() {
         <SkillCard head={"MongoDB"} description={"MOngoDB is a Database that store the data"} progressValue={80} /> 
         </div>
         <Resume />
+        <Projects />
+        <Contact />
+        <Footer />
       </div>
       
 

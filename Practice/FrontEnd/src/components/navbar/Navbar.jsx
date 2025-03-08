@@ -2,9 +2,9 @@
 export const Navbar = () => {
     return (
         <>
-            <div className="container font-[Poppins] fixed flex gap-5 justify-between items-center px-10 py-5 rounded-full w-[80%] bg-white shadow-lg">
+            <div className="container font-[Poppins] fixed flex gap-5 justify-between items-center px-10 py-5 rounded-full w-[80%] bg-white shadow-lg z-50">
 
-                <div className="logo">Logo</div>
+                <div className="logo"><h1 className="text-xl text-center"><span className="text-rose-500">D</span><span className="text-cyan-500">S</span></h1></div>
 
                 <div className="center text-[16px] w-auto">
                     <ul className="flex flex-row justify-between w-[450px] gap-5 cursor-pointer ">
@@ -15,7 +15,7 @@ export const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="end f">
+                <div className="end">
                     <ul className="flex flex-row gap-5 cursor-pointer">
                         <i className=' text-lg hover:text-orange-600 bx bxl-github'></i>
                         <i className=' text-lg hover:text-orange-600 bx bxl-linkedin' ></i>
