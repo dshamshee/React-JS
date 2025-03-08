@@ -12,7 +12,7 @@ export const About = () => {
 
                     <div className="detailss flex gap-8 bg-purple-40 mt-14 p-2">
 
-                        <div className="imag bg-purple-400 rounded w-[500px] h-[580px] bg-[url(./images/Danish.jpg)] bg-cover bg-no-repeat">
+                        <div className="imag bg-purple-400 rounded w-[500px] h-[580px] bg-[url(./images/Danish.jpeg)] bg-cover bg-no-repeat">
                             {/* <h1>Image</h1> */}
                             {/* <img height={200} src="./images/Danish.jpg" alt="" /> */}
                         </div>
