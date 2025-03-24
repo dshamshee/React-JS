@@ -24,7 +24,13 @@
 // import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
 
-import { ForwardRef } from "./components/hooks/useRefs/ForwardRef"
+import { About } from "./components/hooks/ContextAPI/About"
+import { Home } from "./components/hooks/ContextAPI/Home"
+import { BioProvider } from "./components/hooks/ContextAPI/Index"
+import { Services } from "./components/hooks/ContextAPI/Services"
+// import { UseID } from "./components/hooks/UseID"
+// import { ParenComponent } from "./components/PropDrilling"
+// import { ForwardRef } from "./components/hooks/useRefs/ForwardRef"
 
 export const App = () => {
   return (
@@ -55,7 +61,16 @@ export const App = () => {
       {/* <CleanUp /> */}
       {/* <HowNotToFetchApi /> */}
       {/* <UseRef /> */}
-      <ForwardRef />
+      {/* <ForwardRef /> */}
+      {/* <UseID /> */}
+      {/* <ParenComponent /> */}
+
+      <BioProvider>
+        <Home />
+        <About />
+      <Services />
+      </BioProvider>
+      {/* <Services /> //Must be inside the provider to accessing the values of Context-Component */}
 
     </>
   )
