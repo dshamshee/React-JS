@@ -30,6 +30,7 @@
 // import { BioProvider } from "./components/hooks/ContextAPI/Index"
 // import { Services } from "./components/hooks/ContextAPI/Services"
 import { DArkLight, ThemeProvider } from "./components/hooks/ContextAPI/DarkLIght"
+import { ReducerComp } from "./components/hooks/UseReducer"
 // import { UseID } from "./components/hooks/UseID"
 // import { ParenComponent } from "./components/PropDrilling"
 // import { ForwardRef } from "./components/hooks/useRefs/ForwardRef"
@@ -75,10 +76,11 @@ export const App = () => {
       {/* <Services /> */}
       {/* Must be inside the provider to accessing the values of Context-Component */}
 
-      <ThemeProvider>
+      {/* <ThemeProvider>
         <DArkLight />
-      </ThemeProvider>
+      </ThemeProvider> */}
 
+      <ReducerComp />
     </>
   )
 
