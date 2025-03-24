@@ -6,7 +6,7 @@
 // import { EventHandling } from "./components/EventHandling";
 // import { CleanUp } from "./components/hooks/UseEffect/CleanUp"
 // import { HowNotToFetchApi } from "./components/hooks/UseEffect/HowNotToFetchApi"
-import { UseRef } from "./components/hooks/useRefs"
+// import { UseRef } from "./components/hooks/useRefs"
 // import { Challenge } from "./components/hooks/UseEffect/EffectChallenge"
 // import { ReactUseEffect } from "./components/hooks/UseEffect/Index"
 // import { ContactForm } from "./components/hooks/useState/ContactForm"
@@ -23,6 +23,8 @@ import { UseRef } from "./components/hooks/useRefs"
 // import ShortCircuitExample from './components/SortCircuit';
 // import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
+
+import { ForwardRef } from "./components/hooks/useRefs/ForwardRef"
 
 export const App = () => {
   return (
@@ -52,7 +54,8 @@ export const App = () => {
       {/* <Challenge /> */}
       {/* <CleanUp /> */}
       {/* <HowNotToFetchApi /> */}
-      <UseRef />
+      {/* <UseRef /> */}
+      <ForwardRef />
 
     </>
   )
