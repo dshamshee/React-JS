@@ -24,20 +24,22 @@
 // import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
 
-import { About } from "./components/hooks/ContextAPI/About"
-import { Home } from "./components/hooks/ContextAPI/Home"
-import { BioProvider } from "./components/hooks/ContextAPI/Index"
-import { Services } from "./components/hooks/ContextAPI/Services"
+
+// import { About } from "./components/hooks/ContextAPI/About"
+// import { Home } from "./components/hooks/ContextAPI/Home"
+// import { BioProvider } from "./components/hooks/ContextAPI/Index"
+// import { Services } from "./components/hooks/ContextAPI/Services"
+import { DArkLight, ThemeProvider } from "./components/hooks/ContextAPI/DarkLIght"
 // import { UseID } from "./components/hooks/UseID"
 // import { ParenComponent } from "./components/PropDrilling"
 // import { ForwardRef } from "./components/hooks/useRefs/ForwardRef"
 
 export const App = () => {
   return (
-  //   <section className="container">
-  //     <h1 className="card-heading ">Lists of Best Netflix Series</h1>
-  //   <NetflixSeries />
-  // </section>
+    //   <section className="container">
+    //     <h1 className="card-heading ">Lists of Best Netflix Series</h1>
+    //   <NetflixSeries />
+    // </section>
     <>
       {/* <EventHandling/> */}
       {/* <EventProps /> */}
@@ -65,16 +67,21 @@ export const App = () => {
       {/* <UseID /> */}
       {/* <ParenComponent /> */}
 
-      <BioProvider>
+      {/* <BioProvider>
         <Home />
         <About />
-      <Services />
-      </BioProvider>
-      {/* <Services /> //Must be inside the provider to accessing the values of Context-Component */}
+        <Services />
+      </BioProvider> */}
+      {/* <Services /> */}
+      {/* Must be inside the provider to accessing the values of Context-Component */}
+
+      <ThemeProvider>
+        <DArkLight />
+      </ThemeProvider>
 
     </>
   )
-  
+
   // return <Profile />
 
 }
