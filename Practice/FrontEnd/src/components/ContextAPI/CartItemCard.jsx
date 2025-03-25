@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
 
 export const ProductCard = ({ product }) => {
 
-    const {handleAddToCart} = useContext(CartContext);
+    const {handleAddCartProduct} = useContext(CartContext);
+    // console.log(cartProduct)
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
@@ -24,8 +25,8 @@ export const ProductCard = ({ product }) => {
         </p>
         <div className="flex items-center justify-between">
           <span className="text-2xl font-bold text-gray-900">${product.price.toFixed(2)}</span>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={handleAddToCart}
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+          onClick={()=> handleAddCartProduct(product)}
           >
             Add to Cart
           </button>
