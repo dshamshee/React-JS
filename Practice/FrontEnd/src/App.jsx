@@ -1,17 +1,25 @@
-import { Footer } from "./components/footer/Footer"
-import { Navbar } from "./components/navbar/navbar"
-import { About } from "./components/Sections/About"
-import { Contact } from "./components/Sections/Contact"
-import { Hero } from "./components/Sections/Hero"
-import { Projects } from "./components/Sections/Projects"
-import { Resume } from "./components/Sections/Resume"
-import { SkillCard } from "./components/Sections/SkillCard"
+// import { BioProvider } from "./components/ContextAPI"
+// import { ThemeProvider } from "./components/ContextAPI"
+// import { AuthProvider } from "./components/ContextAPI/AuthContext"
+// import { ThemeSwitcherComp } from "./components/ContextAPI/ThemeSwitcher"
+// import { UserAuthentication } from "./components/ContextAPI/UserAuthentication"
+// import { Footer } from "./components/footer/Footer"
+// import { Navbar } from "./components/navbar/navbar"
+// import { About } from "./components/Sections/About"
+// import { Contact } from "./components/Sections/Contact"
+// import { Hero } from "./components/Sections/Hero"
+// import { Projects } from "./components/Sections/Projects"
+// import { Resume } from "./components/Sections/Resume"
+// import { SkillCard } from "./components/Sections/SkillCard"
+
+import { CartProvider } from "./components/ContextAPI/CartContext"
+import { CartPage } from "./components/ContextAPI/CartPage"
 
 function App() {
   return (
     <section >
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <Navbar />
       </div>
       <div className="hero flex flex-col items-center">
@@ -28,8 +36,29 @@ function App() {
         <Projects />
         <Contact />
         <Footer />
-      </div>
-      
+      </div> */}
+
+      {/* <BioProvider>
+        <ThemeSwitcher />
+      </BioProvider> */}
+
+      {/* <ThemeProvider>
+        <AuthProvider>
+          <UserAuthentication />
+        </AuthProvider>
+      </ThemeProvider> */}
+
+      {/* <BioProvider>
+        <ThemeSwitcher>
+          <AuthProvider>
+            <UserAuthentication />
+          </AuthProvider>
+        </ThemeSwitcher>
+      </BioProvider> */}
+
+      <CartProvider>
+        <CartPage />
+      </CartProvider>
 
     </section>
   )

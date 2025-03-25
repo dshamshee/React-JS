@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Classic White T-Shirt",
+    "price": 19.99,
+    "description": "Comfortable 100% cotton t-shirt for everyday wear.",
+    "image": "https://images.pexels.com/photos/2294342/pexels-photo-2294342.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "clothing"
+  },
+  {
+    "id": 2,
+    "name": "Slim Fit Jeans",
+    "price": 49.99,
+    "description": "Stylish denim jeans with a modern slim fit.",
+    "image": "https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "clothing"
+  },
+  {
+    "id": 3,
+    "name": "Wireless Headphones",
+    "price": 89.99,
+    "description": "High-quality sound with noise cancellation.",
+    "image": "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "electronics"
+  },
+  {
+    "id": 4,
+    "name": "Organic Coffee Beans",
+    "price": 12.99,
+    "description": "Premium dark roast, 1kg pack.",
+    "image": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "food"
+  },
+  {
+    "id": 5,
+    "name": "Yoga Mat",
+    "price": 29.99,
+    "description": "Non-slip mat for yoga and workouts.",
+    "image": "https://images.pexels.com/photos/1812964/pexels-photo-1812964.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "fitness"
+  }
+]
