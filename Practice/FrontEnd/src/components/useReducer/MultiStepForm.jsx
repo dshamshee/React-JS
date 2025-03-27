@@ -142,10 +142,10 @@ export const MultiStepForm = () => {
                 <div className={`space-y-4 ${state.step === 3 ? "" : "hidden"}`}>
                     <h2 className="text-xl font-bold">Review Your Data</h2>
                     <div className="bg-gray-50 p-4 rounded">
-                        <p><strong>Name:</strong>{` state.formData.personalInfo.name`}`</p>
-                        <p><strong>Email:</strong>{` state.formData.personalInfo.email`}</p>
-                        <p><strong>Street:</strong>{` state.formData.address.street`}</p>
-                        <p><strong>City:</strong>{` state.formData.address.city`}</p>
+                        <p><strong>Name:</strong>{` ${[state.formData.personalInfo.name]}`}</p>
+                        <p><strong>Email:</strong>{` ${[state.formData.personalInfo.email]}`}</p>
+                        <p><strong>Street:</strong>{` ${[state.formData.address.street]}`}</p>
+                        <p><strong>City:</strong>{` ${[state.formData.address.city]}`}</p>
                     </div>
                 </div>
 
