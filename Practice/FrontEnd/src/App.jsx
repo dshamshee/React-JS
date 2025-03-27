@@ -14,6 +14,7 @@
 
 import { CartProvider } from "./components/ContextAPI/CartContext"
 import { CartPage } from "./components/ContextAPI/CartPage"
+import TodoList from "./components/useReducer/Todo"
 
 function App() {
   return (
@@ -56,9 +57,10 @@ function App() {
         </ThemeSwitcher>
       </BioProvider> */}
 
-      <CartProvider>
+      {/* <CartProvider>
         <CartPage />
-      </CartProvider>
+      </CartProvider> */}
+      <TodoList />
 
     </section>
   )
