@@ -15,6 +15,7 @@
 import { CartProvider } from "./components/ContextAPI/CartContext"
 import { CartPage } from "./components/ContextAPI/CartPage"
 import TodoList from "./components/useReducer/Todo"
+import TodoList2 from "./components/useReducer/ToDo2"
 
 function App() {
   return (
@@ -60,7 +61,8 @@ function App() {
       {/* <CartProvider>
         <CartPage />
       </CartProvider> */}
-      <TodoList />
+      {/* <TodoList /> */}
+      <TodoList2 />
 
     </section>
   )

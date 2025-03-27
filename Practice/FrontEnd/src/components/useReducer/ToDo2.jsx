@@ -1,7 +1,8 @@
 import { useReducer } from "react";
 import { useState } from "react"; // (You'll replace this with useReducer later)
+import { compile } from "tailwindcss";
 
-export default function TodoList() {
+export default function TodoList2() {
 
     const initialState = {
         todos: [
@@ -17,18 +18,17 @@ export default function TodoList() {
     const CLEAR_ALL = "CLEAR_ALL";
     const SET_INPUT_TEXT = "SET_INPUT_TEXT";
 
-    const reducer = (state, action) => {
-
-        switch (action.type) {
+    const reducer = (state, action)=>{
+        switch(action.type){
             case SET_INPUT_TEXT:
-                return {
+                return{
                     ...state,
-                    inputText: action.payload,
-                };
-
+                    inputText: action.payload
+                }
+            
             case ADD_TODO:
-                if (!state.inputText.trim()) return state; // Prevent adding empty todos
-                return {
+                if(!state.inputText.trim()) return state
+                return{
                     ...state,
                     todos: [
                         ...state.todos,
@@ -36,35 +36,35 @@ export default function TodoList() {
                             id: Date.now(),
                             text: state.inputText,
                             completed: false,
-                        }
+                        }         
                     ],
-                    inputText: "",  // Clear input field after adding todo
+                    inputText: ""
+                }
+            
+            case TOGGLE_TODO:
+                return{
+                    ...state,
+                    todos: state.todos.map((todo)=>{
+                       return todo.id === action.payload 
+                        ? {...todo, completed: !todo.completed}
+                        : todo
+                    })
                 }
 
-            case TOGGLE_TODO:
-                return {
-                    ...state,
-                    todos: state.todos.map((todo) =>
-                        todo.id === action.payload
-                            ? { ...todo, completed: !todo.completed }
-                            : todo
-                    ),
-                };
-
             case DELETE_TODO:
-                return {
+                return{
                     ...state,
-                    todos: state.todos.filter((todo) => todo.id !== action.payload)
+                    todos: state.todos.filter((todo)=> todo.id !== action.payload)
                 }
 
             case CLEAR_ALL:
-                return {
+                return{
+                    ...state,
                     todos: []
                 }
-
         }
-
     }
+
 
     const [state, dispatch] = useReducer(reducer, initialState); // useReducer Hook
 
@@ -109,7 +109,7 @@ export default function TodoList() {
                                             onClick={() => dispatch({ type: TOGGLE_TODO, payload: todo.id })}
                                             className="h-5 w-5 rounded border-gray-300 text-blue-500 focus:ring-blue-500"
                                         />
-                                        <span className={`text-gray-800 ${todo.completed === true ? 'line-through' : ''}`}>{todo.text}</span>
+                                        <span className={`text-gray-800 ${todo.completed === true ? 'line-through text-slate-600' : ''}`}>{todo.text}</span>
                                     </div>
                                     <button className="text-red-500 hover:text-red-700"
                                         onClick={() => dispatch({ type: DELETE_TODO, payload: todo.id })}
