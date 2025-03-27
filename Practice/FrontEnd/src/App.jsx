@@ -14,6 +14,7 @@
 
 import { CartProvider } from "./components/ContextAPI/CartContext"
 import { CartPage } from "./components/ContextAPI/CartPage"
+import { MultiStepForm } from "./components/useReducer/MultiStepForm"
 import TodoList from "./components/useReducer/Todo"
 import TodoList2 from "./components/useReducer/ToDo2"
 
@@ -62,7 +63,8 @@ function App() {
         <CartPage />
       </CartProvider> */}
       {/* <TodoList /> */}
-      <TodoList2 />
+      {/* <TodoList2 /> */}
+      <MultiStepForm />
 
     </section>
   )

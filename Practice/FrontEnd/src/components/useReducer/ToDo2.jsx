@@ -18,17 +18,17 @@ export default function TodoList2() {
     const CLEAR_ALL = "CLEAR_ALL";
     const SET_INPUT_TEXT = "SET_INPUT_TEXT";
 
-    const reducer = (state, action)=>{
-        switch(action.type){
+    const reducer = (state, action) => {
+        switch (action.type) {
             case SET_INPUT_TEXT:
-                return{
+                return {
                     ...state,
                     inputText: action.payload
                 }
-            
+
             case ADD_TODO:
-                if(!state.inputText.trim()) return state
-                return{
+                if (!state.inputText.trim()) return state
+                return {
                     ...state,
                     todos: [
                         ...state.todos,
@@ -36,29 +36,29 @@ export default function TodoList2() {
                             id: Date.now(),
                             text: state.inputText,
                             completed: false,
-                        }         
+                        }
                     ],
                     inputText: ""
                 }
-            
+
             case TOGGLE_TODO:
-                return{
+                return {
                     ...state,
-                    todos: state.todos.map((todo)=>{
-                       return todo.id === action.payload 
-                        ? {...todo, completed: !todo.completed}
-                        : todo
+                    todos: state.todos.map((todo) => {
+                        return todo.id === action.payload
+                            ? { ...todo, completed: !todo.completed }
+                            : todo
                     })
                 }
 
             case DELETE_TODO:
-                return{
+                return {
                     ...state,
-                    todos: state.todos.filter((todo)=> todo.id !== action.payload)
+                    todos: state.todos.filter((todo) => todo.id !== action.payload)
                 }
 
             case CLEAR_ALL:
-                return{
+                return {
                     ...state,
                     todos: []
                 }
@@ -90,6 +90,7 @@ export default function TodoList2() {
                         <button
                             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
                             onClick={() => dispatch({ type: ADD_TODO })} // Replace with dispatch
+                            disabled={!state.inputText.trim()} // Disable if empty
                         >
                             Add
                         </button>
@@ -99,6 +100,11 @@ export default function TodoList2() {
                 {/* Todo List */}
                 <div className="divide-y">
                     {/* Example Todo Item (Replace with mapped state) */}
+                    {
+                        state.todos.length === 0 && (
+                            <p className="px-6 py-4 text-gray-500 text-center">No todos yet. Add one above!</p>
+                        )
+                    }
                     {
                         state.todos.map((todo) => {
                             return (
