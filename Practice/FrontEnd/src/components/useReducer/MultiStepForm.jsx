@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { getLocalStorageFormData, setLocalStorageFormData } from './MultiStepFormLocalStoreage'
 
 export const MultiStepForm = () => {
 
@@ -33,6 +34,7 @@ export const MultiStepForm = () => {
         }
         return false;
     };
+
 
     // Define the Structure of the Initial State
     const initialState = {
@@ -94,8 +96,27 @@ export const MultiStepForm = () => {
                 return { ...state, errors: { ...newErrors } };
 
             case SUBMIT_FORM:
-                // Handle final submission (e.g., API call)
-                return { ...state, isSubmitting: true };
+                const personalErrors = validatePersonalInfo(state.formData.personalInfo);
+                const addressErrors = validateAddress(state.formData.address);
+
+                if (Object.keys(personalErrors).length > 0 || Object.keys(addressErrors).length > 0) {
+                    return {
+                        ...state,
+                        errors: { ...personalErrors, ...addressErrors },
+                        step: 1, // Go back to first step with errors
+                    };
+                }
+
+                // Store in localStorage
+                localStorage.setItem('formData', JSON.stringify(state.formData));
+
+                // Optional: Clear form after submission
+                return {
+                    ...state,
+                    isSubmitting: true,
+                    formData: initialState.formData, // Reset form
+                    step: 1, // Go back to step 1
+                }
 
             default:
                 return state;
@@ -214,6 +235,10 @@ export const MultiStepForm = () => {
                         <p><strong>Street:</strong>{` ${[state.formData.address.street]}`}</p>
                         <p><strong>City:</strong>{` ${[state.formData.address.city]}`}</p>
                     </div>
+                    {state.isSubmitting && (
+                        // <p className="text-green-500 mt-2">Form submitted successfully!</p>
+                        console.log("Form submitted successfully!")
+                    )}
                 </div>
 
                 {/* Navigation Buttons */}
