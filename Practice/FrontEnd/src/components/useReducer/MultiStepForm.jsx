@@ -111,6 +111,7 @@ export const MultiStepForm = () => {
                 localStorage.setItem('formData', JSON.stringify(state.formData));
 
                 // Optional: Clear form after submission
+                // danish shamshee
                 return {
                     ...state,
                     isSubmitting: true,
