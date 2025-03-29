@@ -24,14 +24,17 @@
 // import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
 
+import MemoParentComponent from "./components/hooks/Memo/UseMemo"
+
 
 // import { About } from "./components/hooks/ContextAPI/About"
 // import { Home } from "./components/hooks/ContextAPI/Home"
 // import { BioProvider } from "./components/hooks/ContextAPI/Index"
 // import { Services } from "./components/hooks/ContextAPI/Services"
-import { DArkLight, ThemeProvider } from "./components/hooks/ContextAPI/DarkLIght"
-import { ReducerComp } from "./components/hooks/UseReducer"
-import TodoList from "./components/hooks/UseReducer/ToDo"
+// import { DArkLight, ThemeProvider } from "./components/hooks/ContextAPI/DarkLIght"
+// import { ReactMemo } from "./components/hooks/Memo/ReactMemo"
+// import { ReducerComp } from "./components/hooks/UseReducer"
+// import TodoList from "./components/hooks/UseReducer/ToDo"
 // import { UseID } from "./components/hooks/UseID"
 // import { ParenComponent } from "./components/PropDrilling"
 // import { ForwardRef } from "./components/hooks/useRefs/ForwardRef"
@@ -81,7 +84,9 @@ export const App = () => {
         <DArkLight />
       </ThemeProvider> */}
 
-      <ReducerComp />
+      {/* <ReducerComp /> */}
+      {/* <ReactMemo /> */}
+      <MemoParentComponent />
     </>
   )
 
