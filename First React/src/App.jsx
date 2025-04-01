@@ -24,6 +24,8 @@
 // import {Keys} from './keys';
 // import { State } from "./components/hooks/State"
 
+import UseCallback from "./components/hooks/Memo/UseCollback"
+
 // import MemoParentComponent from "./components/hooks/Memo/UseMemo"
 
 
@@ -32,7 +34,7 @@
 // import { BioProvider } from "./components/hooks/ContextAPI/Index"
 // import { Services } from "./components/hooks/ContextAPI/Services"
 // import { DArkLight, ThemeProvider } from "./components/hooks/ContextAPI/DarkLIght"
-import { ReactMemo } from "./components/hooks/Memo/ReactMemo"
+// import { ReactMemo } from "./components/hooks/Memo/ReactMemo"
 // import { ReducerComp } from "./components/hooks/UseReducer"
 // import TodoList from "./components/hooks/UseReducer/ToDo"
 // import { UseID } from "./components/hooks/UseID"
@@ -85,8 +87,9 @@ export const App = () => {
       </ThemeProvider> */}
 
       {/* <ReducerComp /> */}
-      <ReactMemo />
+      {/* <ReactMemo /> */}
       {/* <MemoParentComponent /> */}
+      <UseCallback />
     </>
   )
 
