@@ -1,6 +1,18 @@
 import { NavLink } from "react-router-dom"
 
 export const Header = () => {
+
+    const getNavLInkStyle = ({isActive})=>{
+        return{
+            color: isActive ? "blue" : "black"
+        }
+    }
+
+    const getNavlinkClass = ({isActive}) =>{
+        return isActive ? "nav-link active" : "nav-link"
+    } 
+
+
     return (
         <>
             <header className="section-navbar">
@@ -26,16 +38,26 @@ export const Header = () => {
                     <nav className="navbar">
                         <ul>
                             <li className="nav-item">
-                                <NavLink to="/" className="nav-link">Home</NavLink>
+                                <NavLink to="/" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>
+                                {/* active is a CSS class */}
+                                    Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/about" className="nav-link">About</NavLink>
+                                <NavLink to="/about" className="nav-link" style={({isActive})=>{
+                                    return{
+                                        color: isActive ? "blue" : "black"
+                                    }
+                                }}>
+                                About
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/movie" className="nav-link">Movies</NavLink>
+                                <NavLink to="/movie" className="nav-link" style={getNavLInkStyle}>
+                                Movies</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/contact" className="nav-link">contact</NavLink>
+                                <NavLink to="/contact" className={getNavlinkClass}>
+                                contact</NavLink>
                             </li>
                         </ul>
                     </nav>
