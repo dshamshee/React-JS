@@ -35,7 +35,7 @@ export const Header = () => {
                         </NavLink>
                     </div>
 
-                    <nav className="navbar">
+                    <nav className="navbar flex justify-end">
                         <ul>
                             <li className="nav-item">
                                 <NavLink to="/" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>

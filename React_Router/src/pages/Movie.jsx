@@ -12,7 +12,7 @@ export const Movie = () => {
                     moviesData.Search.map((curMovie) => {
                         return <Card key={curMovie.imdbID} curMovie={curMovie} />
                     })
-                }
+                } 
             </ul>
         </>
     )
