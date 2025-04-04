@@ -1,7 +1,7 @@
 
 export const getMoviesData = async ()=>{
     try {
-       const responce = await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=32577321&s=titanic")
+       const responce = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.VITE_API_KEY}&s=titanic`)
        const data = responce.json()
        return data;
     } catch (error) {
