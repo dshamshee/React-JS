@@ -1,12 +1,11 @@
 import { Form } from "react-router-dom";
 
-// Get the data from the Form component and the Form componet will return a promis the make sure the your fuction is async 
 export const contactData = async ({ request }) => {
   try {
-    const res = await request.formData(); // get the data from the Form component (Inbuilt function in react-router-dom)
-    const data = Object.fromEntries(res); // convert the form data to an object
+    const res = await request.formData();
+    const data = Object.fromEntries(res);
     console.log(data);
-    return null; 
+    return null;
   } catch (error) {
     console.log(error.message);
   }
@@ -15,7 +14,7 @@ export const contactData = async ({ request }) => {
 export const Contact = () => {
   return (
     <>
-      <section className="container section-contact">
+      <section className="container ">
         <h2 className="section-common--heading">contact us</h2>
         <p className="section-common--subheading">
           Get in touch with us. We are always here to help you.
