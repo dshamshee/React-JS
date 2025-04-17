@@ -7,7 +7,7 @@ export const getMoviesDetails = async ({params})=>{
     const id = params.movieID
 
     try {
-       const responce1 = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=${import.meta.env.VITE_API_KEY}`)
+       const responce1 = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=${import.meta.env.VITE_API_KEY}`)
        const data1 = responce1.json()
 
     //    const responce2 = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.VITE_API_KEY}&s=titanic`)

@@ -43,17 +43,15 @@ export const Header = () => {
                                     Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/about" className="nav-link" style={({isActive})=>{
-                                    return{
-                                        color: isActive ? "blue" : "black"
-                                    }
-                                }}>
+                                {/* <NavLink to="/about" className="nav-link" style={({isActive})=>{
+                                    return{color: isActive ? "blue" : "black"}}}> */}
+                                <NavLink to="/about" className="nav-link">
                                 About
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/movie" className="nav-link" style={getNavLInkStyle}>
-                                Movies</NavLink>
+                                {/* <NavLink to="/movie" className="nav-link" style={getNavLInkStyle}>Movies</NavLink> */}
+                                <NavLink to="/movie" className="nav-link">Movies</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/contact" className={getNavlinkClass}>
