@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { deletePost, getPost } from "../api/PostApi";
+import { Form } from "./Form";
 // import '../App.css'
 
 export const Posts = () => {
@@ -19,7 +20,12 @@ export const Posts = () => {
     }, [])
 
     return (
-        <section className="section-post p-5 bg-gray-900">
+        <>
+        <section>
+            <Form data={data} setData={setData} />
+        </section>
+
+        <section className="section-post">
             <ul className="grid grid-cols-3 gap-8">
                 {
                     data.map((curElem) => {
@@ -33,6 +39,8 @@ export const Posts = () => {
                 }
             </ul>
         </section>
+        </>
+
     )
 }
 

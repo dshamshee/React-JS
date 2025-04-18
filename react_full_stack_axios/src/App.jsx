@@ -3,7 +3,7 @@ import { Posts } from "./components/Posts";
 
 const App = ()=>{
   return (
-    <section className="main-section">
+    <section className="main-section p-5 bg-gray-900 flex flex-col justify-center items-center">
       <Posts />
     </section>
   ) 
