@@ -41,16 +41,33 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
     }
 
     const updatePostData = async () => {
-       const res = await updateData(updateDataApi.id, addData)
-       console.log(res)
+        try {
+            const res = await updateData(updateDataApi.id, addData)
+            console.log(res)
+
+            if (res.status === 200) {
+                setData((prev) => {
+                    return prev.map((curElem) => {
+                        return curElem.id === res.data.id ? res.data : curElem
+                    })
+                })
+
+                setAddData({ title: "", body: "" })
+                setUpdateDataApi({})
+            }
+
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
         const action = e.nativeEvent.submitter.value;
-        if(action === "Add"){
+        if (action === "Add") {
             addPostData();
-        }else if(action === "Edit"){
+        } else if (action === "Edit") {
             updatePostData()
         }
     }
