@@ -1,11 +1,20 @@
-import { useState } from "react"
-import { postData } from "../api/PostApi"
+import { useEffect, useState } from "react"
+import { postData, updateData } from "../api/PostApi"
 
-export const Form = ({ data, setData }) => {
+export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
     const [addData, setAddData] = useState({
         title: "",
         body: "",
     })
+
+    const isEmpty = Object.keys(updateDataApi).length === 0;
+
+    useEffect(() => {
+        updateDataApi && setAddData({
+            title: updateDataApi.title || "",
+            body: updateDataApi.body || "",
+        })
+    }, [updateDataApi])
 
     const handleInputChange = (e) => {
         const name = e.target.name
@@ -18,22 +27,32 @@ export const Form = ({ data, setData }) => {
         })
     }
 
-    const addPostData = async ()=>{
+    const addPostData = async () => {
         try {
-        const res = await postData(addData)
-        console.log("res",res)
-        if(res.status === 201){
-            setData([...data, res.data])
-            setAddData({title:"", body:""})
-        }
+            const res = await postData(addData)
+            console.log("res", res)
+            if (res.status === 201) {
+                setData([...data, res.data])
+                setAddData({ title: "", body: "" })
+            }
         } catch (error) {
-            
+
         }
     }
 
-    const handleFormSubmit =(e)=>{
+    const updatePostData = async () => {
+       const res = await updateData(updateDataApi.id, addData)
+       console.log(res)
+    }
+
+    const handleFormSubmit = (e) => {
         e.preventDefault()
-        addPostData();
+        const action = e.nativeEvent.submitter.value;
+        if(action === "Add"){
+            addPostData();
+        }else if(action === "Edit"){
+            updatePostData()
+        }
     }
 
     return (
@@ -66,7 +85,12 @@ export const Form = ({ data, setData }) => {
                     onChange={handleInputChange}
                 />
             </div>
-            <button className="bg-emerald-400 hover:bg-emerald-500 cursor-pointer px-8 rounded-md font-bold" type="submit">Add</button>
+            <button
+                className="bg-emerald-400 hover:bg-emerald-500 cursor-pointer px-8 rounded-md font-bold"
+                type="submit"
+                value={isEmpty ? "Add" : "Edit"}>
+                {isEmpty ? "Add" : "Edit"}
+            </button>
         </form>
     )
 }

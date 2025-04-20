@@ -6,6 +6,7 @@ import { Form } from "./Form";
 export const Posts = () => {
 
     const [data, setData] = useState([])
+    const [updateDataApi, setUpdateDataApi] = useState({})
     // console.log(getPost()) // It will return a promise
 
     // handle promises with async/await (to avoid .then approach)
@@ -15,6 +16,10 @@ export const Posts = () => {
         setData(res.data)
     }
 
+    const handleUpdatePost = (curElem)=>{
+        setUpdateDataApi(curElem)
+    }
+
     useEffect(() => {
         getPostData();
     }, [])
@@ -22,7 +27,7 @@ export const Posts = () => {
     return (
         <>
         <section>
-            <Form data={data} setData={setData} />
+            <Form data={data} setData={setData} updateDataApi={updateDataApi} setUpdateDataApi={setUpdateDataApi} />
         </section>
 
         <section className="section-post">
@@ -32,7 +37,7 @@ export const Posts = () => {
                         // const { id, body, title } = curElem;
                         return (
                             <li key={curElem.id} className="w-full max-w-[500px]">
-                                <Card curElem={curElem} data={data} setData={setData} />
+                                <Card curElem={curElem} data={data} setData={setData} handleUpdatePost={handleUpdatePost} />
                             </li>
                         )
                     })
@@ -45,7 +50,7 @@ export const Posts = () => {
 }
 
 
-const Card = ({ curElem, data, setData }) => {
+const Card = ({ curElem, data, setData, handleUpdatePost }) => {
     const { id, body, title } = curElem;
 
     // function to delete post
@@ -63,8 +68,9 @@ const Card = ({ curElem, data, setData }) => {
         } catch (error) {
             console.log(error)
         }
-
     }
+
+    
 
     return (
         <div className="card flex flex-col justify-between px-5 py-5 h-[300px] my-5 rounded-md shadow-sm shadow-white bg-gray-800 text-white">
@@ -74,7 +80,7 @@ const Card = ({ curElem, data, setData }) => {
                 <p className="">Body: {body}</p>
             </div>
             <div className="btn">
-                <button className="bg-emerald-400 hover:bg-emerald-500 px-8 rounded-md text-black text-lg mr-5 cursor-pointer">Edit</button>
+                <button onClick={()=> handleUpdatePost(curElem)} className="bg-emerald-400 hover:bg-emerald-500 px-8 rounded-md text-black text-lg mr-5 cursor-pointer">Edit</button>
                 <button onClick={() => handleDeletePost(id)} className="btn-delete bg-red-500 hover:bg-red-700 text-black px-5 rounded-md text-lg cursor-pointer">Delete</button>
             </div>
         </div>
